@@ -42,3 +42,10 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Pcoverage -Dsonar.projectKey=devops-iga_test
+      - name: Publish to Docker Hub
+        uses: docker/build-push-action@v1     
+        with:       
+         username: ${{ secrets.DOCKER_HUB_USERNAME }} 
+         password:  ${{ secrets.DOCKER_HUB_PASSWORD }}
+         repository: yourusername/yourprojectname       
+         tags: ${{github.run_number}}
