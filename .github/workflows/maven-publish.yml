@@ -47,5 +47,5 @@ jobs:
         with:       
          username: ${{ secrets.DOCKER_HUB_USERNAME }} 
          password:  ${{ secrets.DOCKER_HUB_PASSWORD }}
-         repository: yourusername/yourprojectname       
+         repository: mostaelk12/imgJava       
          tags: ${{github.run_number}}
